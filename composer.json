@@ -1,0 +1,21 @@
+{
+    "name": "zachgarwood/php-morrisjs",
+    "description": "PHP wrapper for interaction with Morris.js Javascript library",
+    "version": "0.1.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zach Garwood",
+            "email": "zachgarwood@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "zachgarwood/datatable": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7.0"
+    }
+}
