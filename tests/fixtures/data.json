@@ -1,1 +1,1 @@
-{"element":"chart-test","xkey":"booleanboolean","ykeys":["stringstring"],"labels":["string"],"data":[{"booleanboolean":true,"stringstring":"string"}]}
+{"element":"chart-test","xkey":"booleanboolean","data":[{"booleanboolean":true},{"booleanboolean":"string"},{"booleanboolean":"string"}]}
