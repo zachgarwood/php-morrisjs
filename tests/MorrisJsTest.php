@@ -6,8 +6,8 @@ class MorrisJsTest extends \PHPUnit_Framework_TestCase
         $this->fakeData = new DataTable\Data;
         $col1 = new DataTable\Column(DataTable\Column::TYPE_BOOLEAN, 'boolean');
         $cell1 = new DataTable\Cell($col1, true);
-        $cell2 = new DataTable\Cell($col1, 'string');
-        $cell3 = new DataTable\Cell($col1, 'string');
+        $cell2 = new DataTable\Cell($col1, false);
+        $cell3 = new DataTable\Cell($col1, true);
         $row1 = new DataTable\Row;
         $row1->setCell($cell1);
         $row2 = new DataTable\Row;

@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zachgarwood/datatable.git",
-                "reference": "a7d3927f19aea043213769938c30d8cad0b1d673"
+                "reference": "8d66aea4400429fe052c9bc5800c05fec6f93261"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zachgarwood/datatable/zipball/a7d3927f19aea043213769938c30d8cad0b1d673",
-                "reference": "a7d3927f19aea043213769938c30d8cad0b1d673",
+                "url": "https://api.github.com/repos/zachgarwood/datatable/zipball/8d66aea4400429fe052c9bc5800c05fec6f93261",
+                "reference": "8d66aea4400429fe052c9bc5800c05fec6f93261",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
                 }
             ],
             "description": "A basic PHP data table object",
-            "time": "2013-11-08 03:25:15"
+            "time": "2013-11-11 05:35:25"
         }
     ],
     "packages-dev": [
