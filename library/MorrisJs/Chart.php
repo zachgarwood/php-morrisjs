@@ -86,6 +86,7 @@ class Chart
 
     private function createDataJsonProperty()
     {
+        $data = array();
         foreach ($this->data->getRows() as $row) {
             $item = new \stdClass;
             foreach ($row->getCells() as $cell) {
