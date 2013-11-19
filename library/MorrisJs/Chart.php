@@ -105,7 +105,15 @@ class Chart
         foreach ($this->data->getRows() as $row) {
             $item = new \stdClass;
             foreach ($row->getCells() as $cell) {
-                $item->{$cell->getColumn()->getId()} = $cell->value;
+                if ($cell->getColumn()->getType() == Column::TYPE_DATETIME) {
+                    $item->{$cell->getColumn()->getId()} =
+                        $cell->value->format('Y-m-d h:i:s.u');
+                } elseif ($cell->getColumn()->getType() == Column::TYPE_DATE) {
+                    $item->{$cell->getColumn()->getId()} =
+                        $cell->value->format('Y-m-d');
+                } else {
+                    $item->{$cell->getColumn()->getId()} = $cell->value;
+                }
             }
             $data []= $item;
         }
