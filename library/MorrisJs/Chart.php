@@ -22,7 +22,7 @@ class Chart
         RESOURCE_JQUERY = '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js',
         RESOURCE_MORRIS_SCRIPT = '//cdn.oesmith.co.uk/morris-0.4.3.min.js',
         RESOURCE_MORRIS_STYLESHEET = '//cdn.oesmith.co.uk/morris-0.4.3.min.css',
-        RESOURCE_RAPHAEL = '//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.j';
+        RESOURCE_RAPHAEL = '//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js';
 
     public static
         $stylesheets = [
