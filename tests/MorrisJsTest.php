@@ -1,18 +1,24 @@
 <?php
+
+use DataTable\Cell;
+use DataTable\Column;
+use DataTable\Row;
+use DataTable\Table;
+
 class MorrisJsTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->fakeData = new DataTable\Data;
-        $col1 = new DataTable\Column(DataTable\Column::TYPE_BOOLEAN, 'boolean');
-        $cell1 = new DataTable\Cell($col1, true);
-        $cell2 = new DataTable\Cell($col1, false);
-        $cell3 = new DataTable\Cell($col1, true);
-        $row1 = new DataTable\Row;
+        $this->fakeData = new Table;
+        $col1 = new Column(Column::TYPE_BOOLEAN, 'boolean');
+        $cell1 = new Cell($col1, true);
+        $cell2 = new Cell($col1, false);
+        $cell3 = new Cell($col1, true);
+        $row1 = new Row;
         $row1->setCell($cell1);
-        $row2 = new DataTable\Row;
+        $row2 = new Row;
         $row2->setCell($cell2);
-        $row3 = new DataTable\Row;
+        $row3 = new Row;
         $row3->setCell($cell3);
         $this->fakeData->addColumn($col1);
         $this->fakeData->insertRow($row1);

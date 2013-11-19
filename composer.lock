@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4db310c419e1f0b8af23decdd70347f5",
+    "hash": "da14a79ecce5633a22ebe4dec5d7a261",
     "packages": [
         {
             "name": "zachgarwood/datatable",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zachgarwood/datatable.git",
-                "reference": "8d66aea4400429fe052c9bc5800c05fec6f93261"
+                "reference": "3c1e18938c6a2838e612e68fafb32dc966fe7c05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zachgarwood/datatable/zipball/8d66aea4400429fe052c9bc5800c05fec6f93261",
-                "reference": "8d66aea4400429fe052c9bc5800c05fec6f93261",
+                "url": "https://api.github.com/repos/zachgarwood/datatable/zipball/3c1e18938c6a2838e612e68fafb32dc966fe7c05",
+                "reference": "3c1e18938c6a2838e612e68fafb32dc966fe7c05",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
                 }
             ],
             "description": "A basic PHP data table object",
-            "time": "2013-11-11 05:35:25"
+            "time": "2013-11-19 04:33:20"
         }
     ],
     "packages-dev": [

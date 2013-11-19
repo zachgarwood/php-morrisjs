@@ -1,7 +1,10 @@
 <?php
 namespace MorrisJs;
 
-use DataTable;
+use DataTable\Cell;
+use DataTable\Column;
+use DataTable\Row;
+use DataTable\Table;
 
 class Chart
 {
@@ -33,7 +36,7 @@ class Chart
 
     public function __construct(
         $type,
-        DataTable\Data $data,
+        Table $data,
         array $options = array()
     ) {
         if (!in_array($type, self::$types)) {
@@ -97,13 +100,13 @@ class Chart
         return $this->id = self::ID_PREFIX . $id;
     }
 
-    protected function getId()
+    public function getId()
     {
         return isset($this->id) ?
             $this->id : $this->setId(uniqid());
     }
 
-    public function setXAxis(DataTable\Column $xAxis)
+    public function setXAxis(Column $xAxis)
     {
         return $this->xAxis = $xAxis;
     }
