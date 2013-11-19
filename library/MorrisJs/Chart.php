@@ -95,8 +95,40 @@ class Chart
             }
             $json->data = $this->createDataJsonProperty();
         }
+        foreach ($this->options as $option => $value) {
+            $json->$option = $value;
+        }
 
         return json_encode($json);
+    }
+
+    public function setId($id)
+    {
+        return $this->id = self::ID_PREFIX . $id;
+    }
+
+    public function getId()
+    {
+        return isset($this->id) ?
+            $this->id : $this->setId(uniqid());
+    }
+
+    public function setOptions(array $options)
+    {
+        return $this->options = array_merge($this->options, $options);
+    }
+
+    public function setXAxis(Column $xAxis)
+    {
+        return $this->xAxis = $xAxis;
+    }
+
+    protected function getXAxis()
+    {
+        $columns = $this->data->getColumns();
+
+        return isset($this->xAxis) ?
+            $this->xAxis : $this->setXAxis(reset($columns));
     }
 
     private function createDataJsonProperty()
@@ -119,30 +151,6 @@ class Chart
         }
 
         return $data;
-    }
-
-    public function setId($id)
-    {
-        return $this->id = self::ID_PREFIX . $id;
-    }
-
-    public function getId()
-    {
-        return isset($this->id) ?
-            $this->id : $this->setId(uniqid());
-    }
-
-    public function setXAxis(Column $xAxis)
-    {
-        return $this->xAxis = $xAxis;
-    }
-
-    protected function getXAxis()
-    {
-        $columns = $this->data->getColumns();
-
-        return isset($this->xAxis) ?
-            $this->xAxis : $this->setXAxis(reset($columns));
     }
 }
 
