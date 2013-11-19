@@ -1,7 +1,7 @@
 {
     "name": "zachgarwood/php-morrisjs",
     "description": "PHP wrapper for interaction with Morris.js Javascript library",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "license": "MIT",
     "authors": [
         {

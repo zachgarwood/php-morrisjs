@@ -59,12 +59,14 @@ class Chart
         $json = new \stdClass;
         $json->element = $this->getId();
         if ($this->type == self::TYPE_DONUT) {
-            $column = reset($this->data->getColumns());
+            $columns = $this->data->getColumns();
+            $column = reset($columns);
             $json->data = array();
             foreach ($this->data->getRows() as $row) {
                 $item = new \stdClass;
                 $item->label = $column->getLabel();
-                $cell = reset($row->getCells());
+                $cells = $row->getCells();
+                $cell = reset($cells);
                 $item->value = $cell->value;
                 $json->data []= $item;
             }
@@ -113,8 +115,10 @@ class Chart
 
     protected function getXAxis()
     {
+        $columns = $this->data->getColumns();
+
         return isset($this->xAxis) ?
-            $this->xAxis : $this->setXAxis(reset($this->data->getColumns()));
+            $this->xAxis : $this->setXAxis(reset($columns));
     }
 }
 
