@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c6c82e06cc6246b296025fc89c9b4512",
+    "hash": "c185d76369f1bdab6913251e040f7f13",
     "packages": [
         {
             "name": "zachgarwood/datatable",
