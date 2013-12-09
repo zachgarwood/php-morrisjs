@@ -1,7 +1,7 @@
 {
     "name": "zachgarwood/php-morrisjs",
-    "description": "PHP wrapper for interaction with Morris.js Javascript library",
-    "version": "0.4.0",
+    "description": "PHP library for interactiing with the http://www.oesmith.co.uk/morris.js Javascript library",
+    "keywords": ["Morris.js", "chart"],
     "license": "MIT",
     "authors": [
         {
@@ -10,10 +10,10 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
-        "zachgarwood/datatable": "dev-master"
+        "zachgarwood/datatable": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~3.7.0"
