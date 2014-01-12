@@ -74,16 +74,16 @@ class ChartTest extends \PHPUnit_Framework_TestCase
     {
         $chart = new Chart(Chart::TYPE_LINE, $this->fakeTable);
         $chart->setId('test');
-        $chart->setOptions(['option' => 'value']);
-        $this->assertJsonStringEqualsJsonFile('tests/fixtures/data.json', $chart->convertDataToJson());
-        json_decode($chart->convertDataToJson());
-        $this->assertSame(JSON_ERROR_NONE, json_last_error());
+        $chart->setOptions(['option1' => 'value', 'option2' => 'function() {return;}']);
+        // A new line is appended to the output of convertDataToJavascript() to match the new line character at the
+        // end of the fixture file.
+        $this->assertStringEqualsFile('./tests/fixtures/data.js', $chart->convertDataToJavascript() . "\n");
     }
 
     public function testDonutChartHasLabelAndValueColumnInJson()
     {
         $chart = new Chart(Chart::TYPE_DONUT, $this->fakeTable);
-        $json = $chart->convertDataToJson();
+        $json = $chart->convertDataToJavascript();
         $this->assertRegExp('/"' . Chart::COL_LABEL . '":/', $json);
         $this->assertRegExp('/"' . Chart::COL_VALUE . '":/', $json);
     }

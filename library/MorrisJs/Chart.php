@@ -16,6 +16,8 @@ use DataTable\Cell;
 use DataTable\Column;
 use DataTable\Row;
 use DataTable\Table;
+use Zend\Json\Expr as JavascriptExpr;
+use Zend\Json\Json as Javascript;
 
 /**
  * Chart container
@@ -179,39 +181,43 @@ class Chart
      * @api
      * @since 1.0.0
      *
-     * @return string A JSON-encoded string representation of the chart
+     * @return string A Javascript-encoded string representation of the chart
      */
-    public function convertDataToJson()
+    public function convertDataToJavascript()
     {
-        $json = new \stdClass;
-        $json->element = $this->getId();
+        $javascript = new \stdClass;
+        $javascript->element = $this->getId();
         if ($this->type == self::TYPE_DONUT) {
             $columns = $this->data->getColumns();
             $column = reset($columns);
-            $json->data = array();
+            $javascript->data = array();
             foreach ($this->data->getRows() as $row) {
                 $item = new \stdClass;
                 $item->label = $column->getLabel();
                 $cells = $row->getCells();
                 $cell = reset($cells);
                 $item->value = $cell->value;
-                $json->data []= $item;
+                $javascript->data []= $item;
             }
         } else {
-            $json->xkey = $this->getXAxis()->getId();
+            $javascript->xkey = $this->getXAxis()->getId();
             foreach ($this->data->getColumns() as $column) {
                 if ($this->getXAxis() !== $column) {
-                    $json->ykeys []= $column->getId();
-                    $json->labels []= $column->getLabel();
+                    $javascript->ykeys []= $column->getId();
+                    $javascript->labels []= $column->getLabel();
                 }
             }
-            $json->data = $this->createDataJsonProperty();
+            $javascript->data = $this->createDataProperty();
         }
         foreach ($this->options as $option => $value) {
-            $json->$option = $value;
+            if (stripos($value, 'function(') === 0) {
+                $javascript->$option = new JavascriptExpr($value);
+            } else {
+                $javascript->$option = $value;
+            }
         }
 
-        return json_encode($json);
+        return Javascript::encode($javascript, true, ['enableJsonExprFinder' => true]);
     }
 
     /**
@@ -283,11 +289,11 @@ class Chart
     }
 
     /**
-     * Returns an array to be used as the `data` property of the JSON output object
+     * Returns an array to be used as the `data` property of the output Javascript object
      *
      * @return mixed[]
      */
-    private function createDataJsonProperty()
+    private function createDataProperty()
     {
         $data = array();
         foreach ($this->data->getRows() as $row) {
