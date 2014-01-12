@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit>
+<phpunit
+    colors="true"
+    strict="true"
+    verbose="true"
+>
     <logging>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="coverage-clover" target="./build/logs/clover.xml"/>
     </logging>
     <testsuites>
-      <testsuite name="MorrisJs">
-        <directory>tests</directory>
+      <testsuite name="Unit Tests">
+          <directory>./tests/MorrisJs/</directory>
       </testsuite>
     </testsuites>
 </phpunit>

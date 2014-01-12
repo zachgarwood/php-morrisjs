@@ -168,7 +168,7 @@ class Chart
      * @api
      * @since 1.0.0
      *
-     * @return DataTable\Colum
+     * @return DataTable\Table
      */
     public function getData()
     {
