@@ -178,8 +178,20 @@ class Chart
     }
 
     /**
+     * @deprecated Use Chart::convertDataToJavascript() instead
      * @api
      * @since 1.0.0
+     *
+     * @return string A Javascript-encoded string representation of the chart
+     */
+    public function convertDataToJson()
+    {
+        return $this->convertDataToJavascript();
+    }
+
+    /**
+     * @api
+     * @since 1.0.1
      *
      * @return string A Javascript-encoded string representation of the chart
      */

@@ -70,7 +70,7 @@ class ChartTest extends \PHPUnit_Framework_TestCase
         $chart = new Chart('INVALID CHART TYPE!', $this->fakeTable);
     }
 
-    public function testJsonIsValid()
+    public function testJavascriptIsValid()
     {
         $chart = new Chart(Chart::TYPE_LINE, $this->fakeTable);
         $chart->setId('test');
