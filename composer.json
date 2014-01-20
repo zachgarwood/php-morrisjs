@@ -14,7 +14,7 @@
         "issues": "https://github.com/zachgarwood/php-morrisjs/issues",
         "source": "https://github.com/zachgarwood/php-morrisjs"
     },
-    "autoload": {"psr-0": {"MorrisJs\\": "library/"}},
+    "autoload": {"psr-4": {"MorrisJs\\": "library/"}},
     "prefer-stable": true,
     "require": {
         "php": ">=5.4",

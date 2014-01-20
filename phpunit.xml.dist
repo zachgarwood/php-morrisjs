@@ -10,7 +10,7 @@
     </logging>
     <testsuites>
       <testsuite name="Unit Tests">
-          <directory>./tests/MorrisJs/</directory>
+          <directory>./tests/</directory>
       </testsuite>
     </testsuites>
 </phpunit>
