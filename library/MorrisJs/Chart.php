@@ -139,13 +139,12 @@ class Chart
     /**
      * @var string[] An arry of the TYPE_* constants defined in this class
      */
-    private static
-        $types = [
-            self::TYPE_AREA,
-            self::TYPE_BAR,
-            self::TYPE_DONUT,
-            self::TYPE_LINE,
-        ];
+    private static $types = [
+        self::TYPE_AREA,
+        self::TYPE_BAR,
+        self::TYPE_DONUT,
+        self::TYPE_LINE,
+    ];
 
     /**
      * @api
@@ -157,7 +156,8 @@ class Chart
      *
      * @throws InvalidArgumentException if $type is not one of the constant defined in this class
      */
-    public function __construct($type, Table $data, array $options = array()) {
+    public function __construct($type, Table $data, array $options = array())
+    {
         if (!in_array($type, self::$types)) {
             throw new \InvalidArgumentException("'$type' is not a valid chart type!");
         }
@@ -325,4 +325,3 @@ class Chart
         return $data;
     }
 }
-

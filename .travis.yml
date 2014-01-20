@@ -1,15 +1,16 @@
 language: php
 php:
-  - 5.5
-  - 5.4
+    - 5.5
+    - 5.4
 
 before_script:
-  - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --dev --no-interaction
+    - curl -s http://getcomposer.org/installer | php
+    - php composer.phar install --dev --no-interaction
 
 script:
-  - mkdir -p build/logs
-  - php vendor/bin/phpunit
+    - vendor/bin/phpcs --standard=PSR2 --extensions=php --ignore=*/vendor/* -vvv . 
+    - mkdir -p build/logs
+    - vendor/bin/phpunit
 
 after_script:
-  - php vendor/bin/coveralls
+    - vendor/bin/coveralls --no-interaction -vvv
