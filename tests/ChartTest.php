@@ -88,4 +88,3 @@ class ChartTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/"' . Chart::COL_VALUE . '":/', $json);
     }
 }
-
