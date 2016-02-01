@@ -17,7 +17,7 @@
     "autoload": {"psr-4": {"MorrisJs\\": "library/"}},
     "prefer-stable": true,
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.6",
         "zachgarwood/datatable": "~1.0",
         "zendframework/zend-json": "~2.0"
     },
